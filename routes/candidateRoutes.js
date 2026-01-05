@@ -146,4 +146,25 @@ router.get('/vote/count', async (req, res) => {
     }
 })
 
+//candidate list
+router.get('/list', async (req, res) => {
+    try {
+        //find all candidate and sort them by voteCount in descending order
+        const candidate = await Candidate.find();
+
+        //Map candidate to only return their name and voteCount
+        const list = candidate.map((data) => {
+            return {
+                party: data.party,
+                name:data.name
+            }
+        });
+
+        return res.status(200).json(list);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+})
+
 module.exports = router;

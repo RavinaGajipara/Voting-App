@@ -44,6 +44,7 @@ Admin Candidate Management:
 Make flow diagram using draw.io
 
 Homework:
-1. check put and delete api working for candidateRoutes
-2. there should be only one admin, write logic for this
+1. check put and delete api working for candidateRoutes--done
+2. there should be only one admin, write logic for this--done
 3. make route for candidate list
+
